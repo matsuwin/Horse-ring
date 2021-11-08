@@ -38,12 +38,10 @@ strings.LastIndex("Hello,World", "l")         // 右边开始第一个匹配的�
 
 ```go
 // Buffer
-func main() {
-	buf := bytes.Buffer{}
-	buf.Write([]byte("1"))
-	buf.Write([]byte("2"))
-	fmt.Printf("%s\n", buf.Bytes())
-}
+buf := bytes.Buffer{}
+buf.Write([]byte("1"))
+buf.Write([]byte("2"))
+fmt.Printf("%s\n", buf.Bytes())
 ```
 
 <br>
