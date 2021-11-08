@@ -31,10 +31,8 @@ type rune = int32          // rune is an alias for int32
 *example*
 
 ```go
-func main() {
-	var num int32
-	fmt.Printf("%T:%d\n", num, num)
-}
+var num int32
+fmt.Printf("%T:%d\n", num, num)
 
 // int32:0
 ```
