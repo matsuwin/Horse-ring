@@ -5,16 +5,6 @@
 ## Go
 
 ```go
-package main
-
-import (
-	"bytes"
-	"fmt"
-	"os/exec"
-	"runtime"
-	"strings"
-)
-
 func Args(dir string, commands []string) (_ string) {
 	if len(commands) == 0 {
 		return
