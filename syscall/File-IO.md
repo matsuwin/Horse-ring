@@ -5,37 +5,27 @@
 ## Go
 
 ```go
-package main
+filename := "main.go"
 
-import (
-	"fmt"
-	"io/ioutil"
-	"os"
-)
-
-func main() {
-	filename := "main.go"
-
-	// 打开文件
-	fis, err := os.Open(filename)
-	if err != nil {
-		panic(err)
-	}
-
-	// 读取数据
-	data, _ := ioutil.ReadAll(fis)
-
-	// 关闭文件
-	fis.Close()
-
-	// 打印数据
-	fmt.Printf("%s\n", data)
-
-	// 写入新文件
-	fos, _ := os.Create(filename + ".txt")
-	_, _ = fos.Write(data)
-	_ = fos.Close()
+// 打开文件
+fis, err := os.Open(filename)
+if err != nil {
+	panic(err)
 }
+
+// 读取数据
+data, _ := ioutil.ReadAll(fis)
+
+// 关闭文件
+fis.Close()
+
+// 打印数据
+fmt.Printf("%s\n", data)
+
+// 写入新文件
+fos, _ := os.Create(filename + ".txt")
+_, _ = fos.Write(data)
+_ = fos.Close()
 ```
 
 <br>
