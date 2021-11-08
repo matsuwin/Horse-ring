@@ -5,19 +5,10 @@
 ## Go
 
 ```go
-package main
-
-import (
-	"fmt"
-	"time"
-)
-
-func main() {
-	timestamp := time.Now().UnixMilli()
-	timeString := time.UnixMilli(timestamp).Local().Format(time.RFC3339Nano)
-	fmt.Println(timestamp)
-	fmt.Println(timeString)
-}
+timestamp := time.Now().UnixMilli()
+timeString := time.UnixMilli(timestamp).Local().Format(time.RFC3339Nano)
+fmt.Println(timestamp)
+fmt.Println(timeString)
 ```
 
 <br>
