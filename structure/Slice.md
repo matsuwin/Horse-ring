@@ -4,27 +4,28 @@
 
 ## Go
 
-*/usr/local/go/src/runtime/slice.go*
-
 ```go
+// Source code src/runtime/slice.go
 type slice struct {
 	array unsafe.Pointer
 	len   int
 	cap   int
 }
 ```
-
-*example*
-
 ```go
-slice := make([]int, 0, 0)
-for i := 0; i < 10; i++ {
-	slice = append(slice, i+1)
+// Demo code
+var slice = make([]int, 0, 0)
+
+for i := 2; i <= 512; i++ {
+	i = i * 2
+	slice = append(slice, i)
+	i--
 }
-fmt.Printf("len: %d, cap: %d\n", len(slice), cap(slice))
+
+fmt.Printf("len %d, cap %d\n", len(slice), cap(slice))
 
 for i := range slice {
-	fmt.Printf("%d-%d\n", i, slice[i])
+	fmt.Printf("%d ", slice[i])
 }
 ```
 

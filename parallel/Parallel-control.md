@@ -4,25 +4,22 @@
 
 ## Go
 
+```
+GMP
+```
+
 *example*
 
 ```go
-package main
+wg := sync.WaitGroup{}
 
-import (
-	"fmt"
-	"sync"
-)
-
-func main() {
-	wg := sync.WaitGroup{}
-	for i := 0; i < 10; i++ {
-		wg.Add(1)
-		go func(i int) {
-			defer wg.Done()
-			fmt.Println(i)
-		}(i)
-	}
-	wg.Wait()
+for i := 0; i < 10; i++ {
+	wg.Add(1)
+	go func(i int) {
+		defer wg.Done()
+		fmt.Println(i)
+	}(i)
 }
+
+wg.Wait()
 ```

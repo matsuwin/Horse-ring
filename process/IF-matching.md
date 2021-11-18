@@ -5,6 +5,7 @@
 ## Go
 
 ```go
+// Demo code
 package main
 
 import "fmt"
@@ -41,6 +42,7 @@ func main() {
 ## Rust
 
 ```rs
+// Demo code
 fn get_grade(score: i32) -> i32 {
     if score >= 90 {
         return 1;

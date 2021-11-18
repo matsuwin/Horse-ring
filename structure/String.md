@@ -4,12 +4,18 @@
 
 ## Go
 
-*/usr/local/go/src/runtime/string.go*
-
 ```go
+// Source code src/runtime/string.go
 type stringStruct struct {
 	str unsafe.Pointer
 	len int
+}
+```
+```go
+// Demo code
+var text = "你好世界"
+for _, char := range text {
+    fmt.Printf("%c ", char)
 }
 ```
 

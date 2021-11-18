@@ -6,6 +6,10 @@ Error Delivery, Error Panic, Error Recovery
 
 ## Go
 
+```
+errors + panic + recover
+```
+
 <br>
 
 ## Rust

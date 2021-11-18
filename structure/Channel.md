@@ -4,9 +4,8 @@
 
 ## Go
 
-*/usr/local/go/src/runtime/chan.go*
-
 ```go
+// Source code src/runtime/chan.go
 type hchan struct {
 	qcount   uint           // total data in the queue
 	dataqsiz uint           // size of the circular queue
@@ -28,10 +27,8 @@ type hchan struct {
 	lock mutex
 }
 ```
-
-*example*
-
 ```go
+// Demo code
 var wait = make(chan int)
 go func() {
 	time.Sleep(time.Second)
