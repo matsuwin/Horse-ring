@@ -20,19 +20,43 @@
 
 <br>
 
-## Go
+*https://go.dev*
 
 ```go
 // Demo code
-var wg = &sync.WaitGroup{}
 
-for i := 0; i < 10; i++ {
-	wg.Add(1)
-	go func(i int) {
-		defer wg.Done()
-		fmt.Println(i)
-	}(i)
+func worker(wg *sync.WaitGroup, i int) {
+	defer wg.Done()
+	fmt.Println(i)
 }
 
-wg.Wait()
+func main() {
+	wg := &sync.WaitGroup{}
+	for i := 0; i < 10; i++ {
+		wg.Add(1)
+		go worker(wg, i)
+	}
+	wg.Wait()
+}
+
+```
+
+<br>
+
+*https://rustup.rs*
+
+```rs
+// Demo code
+
+use futures::executor::block_on;
+
+async fn hello_world() {
+    println!("hello, world!");
+}
+
+fn main() {
+    let future = hello_world(); // Nothing is printed
+    println!("----------------------");
+    block_on(future); // `future` is run and "hello, world!" is printed
+}
 ```

@@ -2,14 +2,10 @@
 
 <br>
 
-## Go
+*https://go.dev*
 
 ```go
-// Source code
-```
-```go
 // Demo code
-package main
 
 // 匿名函数
 var f1 = func() { fmt.Println("f1") }
@@ -52,11 +48,11 @@ func main() {
 
 <br>
 
-## Rust
-
-*example*
+*https://rustup.rs*
 
 ```rs
+// Demo code
+
 use defer_lite::defer;
 
 fn type_of<T>(_: &T) -> String {

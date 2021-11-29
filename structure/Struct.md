@@ -2,14 +2,10 @@
 
 <br>
 
-## Go
+*https://go.dev*
 
 ```go
-// Source code
-```
-```go
 // Demo code
-package main
 
 type User struct {
 	Name string `json:"name"` // Name
@@ -33,9 +29,11 @@ func main() {
 
 <br>
 
-## Rust
+*https://rustup.rs*
 
 ```rs
+// Demo code
+
 pub struct User {
     pub name: String,
     pub age: u32,

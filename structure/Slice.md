@@ -2,7 +2,7 @@
 
 <br>
 
-## Go
+*https://go.dev*
 
 ```go
 // Source code src/runtime/slice.go
@@ -14,35 +14,38 @@ type slice struct {
 ```
 ```go
 // Demo code
-var slice = make([]int, 0, 0)
 
-for i := 2; i <= 512; i++ {
-	i = i * 2
-	slice = append(slice, i)
-	i--
-}
-
-fmt.Printf("len %d, cap %d\n", len(slice), cap(slice))
-
-for i := range slice {
-	fmt.Printf("%d ", slice[i])
+func main() {
+	slice := make([]int, 0, 0)
+	for i := 2; i <= 512; i++ {
+		i = i * 2
+		slice = append(slice, i)
+		i--
+	}
+	fmt.Printf("len %d, cap %d\n", len(slice), cap(slice))
+	for i := range slice {
+		fmt.Printf("%d ", slice[i])
+	}
 }
 ```
 
 <br>
 
-## Rust
-
-*example*
+*https://rustup.rs*
 
 ```rs
-let mut slice: Vec<i32> = vec![];
-for i in 0..10 {
-    slice.push(i + 1);
-}
-println!("len: {}, cap: {}", slice.len(), slice.capacity());
+// Demo code
 
-for i in 0..slice.len() {
-    println!("{}-{}", i, slice[i]);
+fn main() {
+    let mut slice: Vec<i32> = vec![];
+    for mut i in 2..=512 {
+        i = i * 2;
+        slice.push(i);
+        i = i - 1;
+    }
+    println!("len: {}, cap: {}", slice.len(), slice.capacity());
+    for i in 0..slice.len() {
+        println!("{}", slice[i]);
+    }
 }
 ```

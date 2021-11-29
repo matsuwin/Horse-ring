@@ -2,7 +2,7 @@
 
 <br>
 
-## Go
+*https://go.dev*
 
 ```go
 // Source code src/runtime/chan.go
@@ -29,25 +29,36 @@ type hchan struct {
 ```
 ```go
 // Demo code
-var wait = make(chan int)
-go func() {
-	time.Sleep(time.Second)
-	wait <- 1
-}()
-<-wait
+
+func main() {
+	wait := make(chan int)
+	go func() {
+		time.Sleep(time.Second)
+		wait <- 1
+	}()
+	<-wait
+}
 ```
 ```go
-var queue = make(chan int, 100)
+// message queue
 
-go func() {
+var queue = make(chan int, 10)
+
+func consumer() {
+	for message := range queue {
+		fmt.Print(message)
+		time.Sleep(time.Millisecond * 100)
+	}
+}
+
+func main() {
+	go consumer()
 	for i := 0; i < 100; i++ {
 		queue <- i
 	}
-	fmt.Println("End of filling")
-}()
-
-for message := range queue {
-	time.Sleep(time.Millisecond * 10)
-	fmt.Print(message)
 }
 ```
+
+<br>
+
+*https://rustup.rs*

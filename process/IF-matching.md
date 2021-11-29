@@ -2,68 +2,66 @@
 
 <br>
 
-## Go
+*https://go.dev*
 
 ```go
 // Demo code
-package main
 
-import "fmt"
-
-func getGrade(score int) (ret int) {
-	if score >= 90 {
-		ret = 1
-	} else if score >= 70 {
-		ret = 2
+func condition(score int) rune {
+	if score >= 80 {
+		return 'A'
 	} else if score >= 60 {
-		ret = 3
+		return 'B'
 	} else {
-		ret = 4
+		return 'C'
 	}
-	return
+}
+
+func matching(score int) string {
+	switch condition(score) {
+	case 'A':
+		return "优秀"
+	case 'B':
+		return "及格"
+	case 'C':
+		return "不及格"
+	default:
+		return "?"
+	}
 }
 
 func main() {
-	n := getGrade(88)
-	g := ""
-	switch n {
-	case 1: g = "A"
-	case 2: g = "B"
-	case 3: g = "C"
-	case 4: g = "D"
-	default: g = "_"
-	}
-	fmt.Printf("Grade: %s\n", g)
+	fmt.Printf("成绩%s\n", matching(88))
 }
 ```
 
 <br>
 
-## Rust
+*https://rustup.rs*
 
 ```rs
 // Demo code
-fn get_grade(score: i32) -> i32 {
-    if score >= 90 {
-        return 1;
-    } else if score >= 70 {
-        return 2;
+
+fn condition(score: i32) -> char {
+    if score >= 80 {
+        return 'A';
     } else if score >= 60 {
-        return 3;
+        return 'B';
     } else {
-        return 4;
-    };
+        return 'C';
+    }
+}
+
+fn matching(score: i32) -> String {
+    match condition(score) {
+        'A' => "优秀",
+        'B' => "及格",
+        'C' => "不及格",
+        _ => "?"
+    }.to_string()
 }
 
 fn main() {
-    let n = get_grade(88);
-    let g = match n {
-        1 => "A",
-        2 => "B",
-        3 => "C",
-        4 => "D",
-        _ => "_"
-    };
-    println!("Grade: {}", g);
+    println!("成绩{}", matching(88));
 }
 ```

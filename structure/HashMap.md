@@ -2,7 +2,7 @@
 
 <br>
 
-## Go
+*https://go.dev*
 
 ```go
 // Source code src/runtime/map.go
@@ -20,26 +20,26 @@ type hmap struct {
 ```
 ```go
 // Demo code
-var sets = make(map[int]int, 10)
 
-for i := 0; i < 10; i++ {
-	sets[i] = i + 1
-}
-
-fmt.Printf("len %d\n", len(sets))
-
-for key, value := range sets {
-	fmt.Printf("%d: %d\n", key, value)
+func main() {
+	sets := make(map[int]int, 10)
+	for i := 0; i < 10; i++ {
+		sets[i] = i + 1
+	}
+	fmt.Printf("len %d\n", len(sets))
+	for key, value := range sets {
+		fmt.Printf("%d: %d\n", key, value)
+	}
 }
 ```
 
 <br>
 
-## Rust
-
-*example*
+*https://rustup.rs*
 
 ```rs
+// Demo code
+
 use std::collections::HashMap;
 
 fn main() {

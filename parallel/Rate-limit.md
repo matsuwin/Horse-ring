@@ -4,15 +4,14 @@
 
 ## Go
 
-*example*
+*https://go.dev*
 
 ```go
+// Demo code
+
 package main
 
-import (
-	"fmt"
-	"go.uber.org/ratelimit"
-)
+import "go.uber.org/ratelimit"
 
 func main() {
 	rl := ratelimit.New(20) // 速率, r/s
@@ -22,3 +21,7 @@ func main() {
 	}
 }
 ```
+
+<br>
+
+*https://rustup.rs*

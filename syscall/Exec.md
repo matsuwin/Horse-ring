@@ -2,10 +2,12 @@
 
 <br>
 
-## Go
+*https://go.dev*
 
 ```go
-func Args(dir string, commands []string) (_ string) {
+// Demo code
+
+func args(dir string, commands []string) (_ string) {
 	if len(commands) == 0 {
 		return
 	}
@@ -17,27 +19,29 @@ func Args(dir string, commands []string) (_ string) {
 		cmd.Dir = dir
 	}
 	_ = cmd.Run()
-	txt := out.String()
+	text := out.String()
 	if err.Len() != 0 {
-		txt += "\n" + err.String()
+		text += "\n" + err.String()
 	}
 	if runtime.GOOS == "windows" {
-		// txt = _GBKEncoder(txt)
+		// text = _GBK(text)
 	}
-	return strings.TrimSpace(txt)
+	return strings.TrimSpace(text)
 }
 
 func main() {
-	txt := Args("", []string{"ls", "-l"})
+	txt := args("", []string{"ls", "-l"})
 	fmt.Println(txt)
 }
 ```
 
 <br>
 
-## Rust
+*https://rustup.rs*
 
 ```rs
+// Demo code
+
 fn args(dir: &str, commands: Vec<&str>) -> String {
     if commands.len() == 0 {
         return String::new();

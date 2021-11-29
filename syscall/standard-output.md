@@ -2,24 +2,26 @@
 
 <br>
 
-## Go
+*https://go.dev*
 
 ```go
-// stdout
-fmt.Println("stdout")
+// Demo code
 
-// stderr
-println("stderr")
+func main() {
+	fmt.Println("stdout")
+	println("stderr")
+}
 ```
 
 <br>
 
-## Rust
+*https://rustup.rs*
 
 ```rs
-// stdout
-println!("stdout");
+// Demo code
 
-// stderr
-eprintln!("stderr");
+fn main() {
+    println!("stdout");
+    eprintln!("stderr");
+}
 ```

@@ -2,7 +2,7 @@
 
 <br>
 
-## Go
+*https://go.dev*
 
 ```go
 // 无限循环
@@ -16,7 +16,7 @@ for i := 0; i < 10; i++ {
 
 <br>
 
-## Rust
+*https://rustup.rs*
 
 ```rs
 // 无限循环

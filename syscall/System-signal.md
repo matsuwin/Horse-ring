@@ -2,25 +2,30 @@
 
 <br>
 
-## Go
+*https://go.dev*
 
 ```go
-var sig = make(chan os.Signal)
+// Demo code
 
-signal.Notify(sig, syscall.SIGINT, syscall.SIGTERM)
+func main() {
+	sig := make(chan os.Signal)
+	signal.Notify(sig, syscall.SIGINT, syscall.SIGTERM)
 
-// Wait
-for message := range sig {
-	fmt.Println(message.String())
-	return
+	// Wait
+	for message := range sig {
+		fmt.Println(message.String())
+		return
+	}
 }
 ```
 
 <br>
 
-## Rust
+*https://rustup.rs*
 
 ```rs
+// Demo code
+
 #[macro_use]
 extern crate chan;
 

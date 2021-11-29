@@ -2,44 +2,51 @@
 
 <br>
 
-## Go
+*https://go.dev*
 
 ```go
-filename := "main.go"
+// Demo code
 
-// 打开文件
-fis, err := os.Open(filename)
-if err != nil {
-	panic(err)
+const fp = "main.go"
+
+func main() {
+
+	// 打开文件
+	fo, err := os.Open(fp)
+	if err != nil {
+		panic(err)
+	}
+
+	// 读取数据
+	data, _ := ioutil.ReadAll(fo)
+
+	// 关闭文件
+	fo.Close()
+
+	// 打印数据
+	fmt.Printf("%s\n", data)
+
+	// 写入新文件
+	fc, _ := os.Create(fp + ".txt")
+	fc.Write(data)
+	fc.Close()
 }
-
-// 读取数据
-data, _ := ioutil.ReadAll(fis)
-
-// 关闭文件
-fis.Close()
-
-// 打印数据
-fmt.Printf("%s\n", data)
-
-// 写入新文件
-fos, _ := os.Create(filename + ".txt")
-_, _ = fos.Write(data)
-_ = fos.Close()
 ```
 
 <br>
 
-## Rust
+*https://rustup.rs*
 
 ```rs
+// Demo code
+
 use std::io::{Read, Write};
 
 fn main() {
-    let filename = "src/main.rs";
+    let fp = "src/main.rs";
 
     // 打开文件
-    let mut fo = match std::fs::File::open(filename) {
+    let mut fo = match std::fs::File::open(fp) {
         Err(err) => panic!("{}", err),
         Ok(file) => file,
     };
@@ -54,7 +61,7 @@ fn main() {
     println!("{}", data);
 
     // 写入新文件
-    let mut fc = std::fs::File::create(filename.to_string() + ".txt").unwrap();
+    let mut fc = std::fs::File::create(fp.to_string() + ".txt").unwrap();
     fc.write_all(data.as_bytes()).unwrap();
 }
 ```

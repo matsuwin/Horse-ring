@@ -4,12 +4,12 @@ Error Delivery, Error Panic, Error Recovery
 
 <br>
 
-## Go
+*https://go.dev*
 
-```
-errors + panic + recover
+```go
+/ errors / panic / recover
 ```
 
 <br>
 
-## Rust
+*https://rustup.rs*

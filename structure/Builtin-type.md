@@ -2,11 +2,20 @@
 
 <br>
 
-## Go
+*https://go.dev*
 
-**Value type**
+```go
+// Demo code
 
-*值类型的变量直接存储值，参数传递时，传递的是一个副本*
+func main() {
+	var num int32
+	fmt.Printf("%T:%d\n", num, num)
+}
+
+// int32:0
+```
+
+**Value type** *值类型的变量直接存储值，参数传递时，传递的是一个副本*
 
 ```go
 // bool 布尔类型，可以是两种状态 true 和 false
@@ -26,25 +35,11 @@ type uintptr uintptr
 // float32 浮点数类型，符合 IEEE-754 二进制浮点数算术标准
 type float32 float32 // and float64
 
-// complex64 复数类型，由浮点数类型的实部和虚部组成
-type complex64 complex64 // and complex128
-
 // string 字符串类型，8位字节序列。默认使用 UTF-8 文本编码，值不可变
 type string string
 ```
 
-**Empty type**
-
-*空类型是所有引用类型的零值*
-
-```go
-// nil 是一个预先声明的变量，表示 [interface, pointer, slice, map, channel, function] 的零值
-var nil Type
-```
-
-**Reference type**
-
-*引用类型的变量存储的是一个地址，参数传递时，传递的是变量本身*
+**Reference type** *引用类型的变量存储的是一个地址，参数传递时，传递的是变量本身*
 
 ```go
 // error 错误类型，内置的错误类型接口
@@ -68,29 +63,20 @@ var channel = make(chan int, cap)
 var function = func() {}
 ```
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+**Empty type** *空类型是所有引用类型的零值*
 
-## Rust
-
-```rs
-usize
-u8, u16, u32, u64
-i8, i16, i32, i64
-&str
-String
+```go
+// nil 是一个预先声明的变量，表示 [interface, pointer, slice, map, channel, function] 的零值
+var nil Type
 ```
 
-*example*
+<br>
+
+*https://rustup.rs*
 
 ```rs
+// Demo code
+
 fn type_of<T>(_: &T) -> String {
     std::any::type_name::<T>().to_string()
 }
@@ -101,4 +87,12 @@ fn main() {
 }
 
 // i32:0
+```
+
+```rs
+usize
+u8, u16, u32, u64
+i8, i16, i32, i64
+&str
+String
 ```
