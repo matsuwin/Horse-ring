@@ -5,32 +5,25 @@
 *https://go.dev*
 
 ```go
-// Demo code
-
-const fp = "main.go"
-
-func main() {
-
-	// 打开文件
-	fo, err := os.Open(fp)
-	if err != nil {
-		panic(err)
-	}
-
-	// 读取数据
-	data, _ := ioutil.ReadAll(fo)
-
-	// 关闭文件
-	fo.Close()
-
-	// 打印数据
-	fmt.Printf("%s\n", data)
-
-	// 写入新文件
-	fc, _ := os.Create(fp + ".txt")
-	fc.Write(data)
-	fc.Close()
+// 打开文件
+fop, err := os.Open("1.txt")
+if err != nil {
+	panic(err)
 }
+
+// 读取数据
+data, _ := ioutil.ReadAll(fop)
+
+// 关闭文件
+fop.Close()
+
+// 打印数据
+fmt.Printf("%s\n", data)
+
+// 写入新文件
+fcr, _ := os.Create("2.txt")
+fcr.Write(data)
+fcr.Close()
 ```
 
 <br>
@@ -38,30 +31,43 @@ func main() {
 *https://rustup.rs*
 
 ```rs
-// Demo code
+// 打开文件
+let mut fop = match std::fs::File::open("1.txt") {
+    Err(err) => panic!("{}", err),
+    Ok(file) => file,
+};
 
-use std::io::{Read, Write};
+// 读取数据
+let mut data = String::new();
+fop.read_to_string(&mut data).unwrap();
 
-fn main() {
-    let fp = "src/main.rs";
+// 关闭文件
 
-    // 打开文件
-    let mut fo = match std::fs::File::open(fp) {
-        Err(err) => panic!("{}", err),
-        Ok(file) => file,
-    };
+// 打印数据
+println!("{}", data);
 
-    // 读取数据
-    let mut data = String::new();
-    fo.read_to_string(&mut data).unwrap();
+// 写入新文件
+let mut fcr = std::fs::File::create("2.txt".to_string()).unwrap();
+fcr.write_all(data.as_bytes()).unwrap();
+```
 
-    // 关闭文件
+<br>
 
-    // 打印数据
-    println!("{}", data);
+*https://dart.dev*
 
-    // 写入新文件
-    let mut fc = std::fs::File::create(fp.to_string() + ".txt").unwrap();
-    fc.write_all(data.as_bytes()).unwrap();
-}
+```dart
+// 打开文件
+var fop = new File("1.txt");
+
+// 读取数据
+var data = fop.readAsStringSync().toString();
+
+// 关闭文件
+
+// 打印数据
+print(data);
+
+// 写入新文件
+File fcr = new File("2.txt");
+fcr.writeAsStringSync(data);
 ```

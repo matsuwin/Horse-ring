@@ -5,40 +5,19 @@
 *https://go.dev*
 
 ```go
-// Source code src/runtime/chan.go
-type hchan struct {
-	qcount   uint           // total data in the queue
-	dataqsiz uint           // size of the circular queue
-	buf      unsafe.Pointer // points to an array of dataqsiz elements
-	elemsize uint16
-	closed   uint32
-	elemtype *_type // element type
-	sendx    uint   // send index
-	recvx    uint   // receive index
-	recvq    waitq  // list of recv waiters
-	sendq    waitq  // list of send waiters
+// new channel
+var wait = make(chan int)
 
-	// lock protects all fields in hchan, as well as several
-	// fields in sudogs blocked on this channel.
-	//
-	// Do not change another G's status while holding this lock
-	// (in particular, do not ready a G), as this can deadlock
-	// with stack shrinking.
-	lock mutex
-}
-```
-```go
-// Demo code
+// 一秒钟后向 channel 中写入数据
+go func() {
+	time.Sleep(time.Second)
+	wait <- 1
+}()
 
-func main() {
-	wait := make(chan int)
-	go func() {
-		time.Sleep(time.Second)
-		wait <- 1
-	}()
-	<-wait
-}
+// 从 channel 中取数据，如果没有数据会一直阻塞，直到有数据写入。
+<-wait
 ```
+
 ```go
 // message queue
 

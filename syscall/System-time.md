@@ -5,14 +5,17 @@
 *https://go.dev*
 
 ```go
-// Demo code
+var unixMillis = time.Now().UnixMilli()
+var timeString = time.UnixMilli(unixMillis).Local().Format(time.RFC3339Nano)
+```
 
-func main() {
-	unixMillis := time.Now().UnixMilli()
-	timeString := time.UnixMilli(unixMillis).Local().Format(time.RFC3339Nano)
-	fmt.Println(unixMillis)
-	fmt.Println(timeString)
-}
+<br>
+
+*https://dart.dev*
+
+```dart
+var unixMillis = DateTime.now().millisecondsSinceEpoch;
+var timeString = DateTime.fromMillisecondsSinceEpoch(unixMillis);
 ```
 
 <br>
@@ -20,8 +23,6 @@ func main() {
 *https://rustup.rs*
 
 ```rs
-// Demo code
-
 use chrono::{Local, TimeZone};
 
 fn main() {

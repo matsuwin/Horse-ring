@@ -5,7 +5,7 @@
 *https://go.dev*
 
 ```go
-// Source code src/runtime/slice.go
+// source code src/runtime/slice.go
 type slice struct {
 	array unsafe.Pointer
 	len   int
@@ -13,19 +13,22 @@ type slice struct {
 }
 ```
 ```go
-// Demo code
+// new slice
+var slice = make([]int, 0, 0)
 
-func main() {
-	slice := make([]int, 0, 0)
-	for i := 2; i <= 512; i++ {
-		i = i * 2
-		slice = append(slice, i)
-		i--
-	}
-	fmt.Printf("len %d, cap %d\n", len(slice), cap(slice))
-	for i := range slice {
-		fmt.Printf("%d ", slice[i])
-	}
+// write
+for i := 2; i <= 512; i++ {
+	i = i * 2
+	slice = append(slice, i)
+	i--
+}
+
+// shwo len and cap
+fmt.Printf("len %d, cap %d\n", len(slice), cap(slice))
+
+// range
+for i := range slice {
+	fmt.Printf("%d ", slice[i])
 }
 ```
 
@@ -34,18 +37,22 @@ func main() {
 *https://rustup.rs*
 
 ```rs
-// Demo code
+// new slice
+let mut slice: Vec<i32> = vec![];
 
-fn main() {
-    let mut slice: Vec<i32> = vec![];
-    for mut i in 2..=512 {
-        i = i * 2;
-        slice.push(i);
-        i = i - 1;
-    }
-    println!("len: {}, cap: {}", slice.len(), slice.capacity());
-    for i in 0..slice.len() {
-        println!("{}", slice[i]);
-    }
+// write
+for mut i in 2..=512 {
+	i = i * 2;
+	slice.push(i);
+	i = i - 1;
+}
+
+// show len and cap
+println!("len: {}, cap: {}", slice.len(), slice.capacity());
+
+// range
+for i in 0..slice.len() {
+	print!("{} ", i);
+    io::stdout().flush();
 }
 ```

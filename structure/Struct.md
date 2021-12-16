@@ -5,8 +5,6 @@
 *https://go.dev*
 
 ```go
-// Demo code
-
 type User struct {
 	Name string `json:"name"` // Name
 	Age  uint32 `json:"age"`  // Age
@@ -17,12 +15,13 @@ func (u *User) print() {
 	fmt.Printf("%s\n", buf)
 	u.Age = 99
 }
-
+```
+```go
 func main() {
-	u := User{}
-	u.Name = "Matsuwin"
-	u.Age = 24
-	u.print()
+	user := &User{}
+	user.Name = "Matsuwin"
+	user.Age = 24
+	user.print()
 	fmt.Println(u.Age)
 }
 ```

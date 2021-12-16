@@ -7,15 +7,13 @@
 ```go
 // Demo code
 
-func main() {
-	sig := make(chan os.Signal)
-	signal.Notify(sig, syscall.SIGINT, syscall.SIGTERM)
+sig := make(chan os.Signal)
+signal.Notify(sig, syscall.SIGINT, syscall.SIGTERM)
 
-	// Wait
-	for message := range sig {
-		fmt.Println(message.String())
-		return
-	}
+// Wait
+for message := range sig {
+    fmt.Println(message.String())
+    return
 }
 ```
 

@@ -12,7 +12,7 @@
 
 系统调用 ：*System call*
 
-- [Standard output/error](syscall/standard-output.md)
+- [Standard I/O](syscall/standard-io.md)
 - [File I/O](syscall/File-IO.md)
 - [System time](syscall/System-time.md)
 - [System signal](syscall/System-signal.md)
@@ -30,6 +30,4 @@
 并行编程 ：*Parallel programming*
 
 - [Parallel control](parallel/Parallel-control.md)
-- [Atomic computing](parallel/Atomic-computing.md)
-- [Critical section lock](parallel/Critical-section-lock.md)
 - [Rate limit](parallel/Rate-limit.md)

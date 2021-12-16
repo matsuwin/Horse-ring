@@ -7,6 +7,9 @@
 ```go
 // Demo code
 
+text := args("", []string{"ls", "-l"})
+```
+```go
 func args(dir string, commands []string) (_ string) {
 	if len(commands) == 0 {
 		return
@@ -27,11 +30,6 @@ func args(dir string, commands []string) (_ string) {
 		// text = _GBK(text)
 	}
 	return strings.TrimSpace(text)
-}
-
-func main() {
-	txt := args("", []string{"ls", "-l"})
-	fmt.Println(txt)
 }
 ```
 
@@ -62,7 +60,7 @@ fn args(dir: &str, commands: Vec<&str>) -> String {
 }
 
 fn main() {
-    let txt = args(".", vec!["ls", "-l"]);
-    println!("{}", txt);
+    let text = args(".", vec!["ls", "-l"]);
+    println!("{}", text);
 }
 ```
