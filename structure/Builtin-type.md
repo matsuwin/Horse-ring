@@ -18,22 +18,25 @@ fmt.Printf("%T:%d\n", num, num)
 
 ```go
 // bool 布尔类型，可以是两种状态 true 和 false
-type bool bool
+var has bool
 
 // int 有符号整数类型，更具当前操作系统位数自动推断（int32/int64）
-type int int or int8, int16, int32, int64
+var num int or int8, int16, int32, int64
 
 // uint 无符号整数类型，更具当前操作系统位数自动推断（uint32/uint64）
-type uint uint or uint8, uint16, uint32, uint64
-
-// uintptr 指针整数类型，可以存储任何指针
-type uintptr uintptr
+var num uint or uint8, uint16, uint32, uint64
 
 // float32 浮点数类型，符合 IEEE-754 二进制浮点数算术标准
-type float32 float32 // and float64
+var float float32 or float64
 
 // string 字符串类型，8位字节序列。默认使用 UTF-8 文本编码，值不可变
-type string string
+var str string
+
+// array 数组类型
+var array [3]int or [...]int{1, 2, 3}
+
+// uintptr 指针整数类型，可以存储任何指针
+var p uintptr
 ```
 
 <br>
