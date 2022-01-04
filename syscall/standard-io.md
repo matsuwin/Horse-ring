@@ -12,6 +12,16 @@
 
 <br>
 
+*C*
+
+```c
+// output
+fprintf(stdout, "stdout\n"); // or printf("stdout\n");
+fprintf(stderr, "stderr\n");
+```
+
+<br>
+
 *https://dart.dev*
 
 ```dart
@@ -29,12 +39,25 @@ stderr.write("stderr ${input}\n");
 
 ```go
 // input
-input := ""
+var input string
 fmt.Scan(&input)
 
 // output
-fmt.Println("stdout " + input)
-println("stderr " + input)
+fmt.Printf("stdout %s\n", input)
+println("stderr")
+```
+
+<br>
+
+*https://vlang.io*
+
+```go
+// input
+name := os.input("input: ")
+
+// output
+print("stdout $name\n")
+eprintln("stderr")
 ```
 
 <br>
@@ -47,6 +70,6 @@ let mut input = String::new();
 io::stdin().read_line(&mut input);
 
 // output
-println!("stdout");
+print!("stdout\n");
 eprintln!("stderr");
 ```

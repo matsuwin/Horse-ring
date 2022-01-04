@@ -5,11 +5,6 @@
 *https://go.dev*
 
 ```go
-// Demo code
-
-text := args("", []string{"ls", "-l"})
-```
-```go
 func args(dir string, commands []string) (_ string) {
 	if len(commands) == 0 {
 		return
@@ -32,14 +27,16 @@ func args(dir string, commands []string) (_ string) {
 	return strings.TrimSpace(text)
 }
 ```
+```go
+// ls -l
+var text = args("", []string{"ls", "-l"})
+```
 
 <br>
 
 *https://rustup.rs*
 
 ```rs
-// Demo code
-
 fn args(dir: &str, commands: Vec<&str>) -> String {
     if commands.len() == 0 {
         return String::new();
@@ -58,9 +55,7 @@ fn args(dir: &str, commands: Vec<&str>) -> String {
     }
     out.trim().to_string()
 }
-
-fn main() {
-    let text = args(".", vec!["ls", "-l"]);
-    println!("{}", text);
-}
+```
+```rs
+let text = args(".", vec!["ls", "-l"]);
 ```

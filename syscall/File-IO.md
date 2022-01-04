@@ -6,24 +6,24 @@
 
 ```go
 // 打开文件
-fop, err := os.Open("1.txt")
+op, err := os.Open("1.txt")
 if err != nil {
 	panic(err)
 }
 
 // 读取数据
-data, _ := ioutil.ReadAll(fop)
+data, _ := io.ReadAll(op)
 
 // 关闭文件
-fop.Close()
+op.Close()
 
 // 打印数据
 fmt.Printf("%s\n", data)
 
 // 写入新文件
-fcr, _ := os.Create("2.txt")
-fcr.Write(data)
-fcr.Close()
+cr, _ := os.Create("2.txt")
+cr.Write(data)
+cr.Close()
 ```
 
 <br>

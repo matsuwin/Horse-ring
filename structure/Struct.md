@@ -6,23 +6,35 @@
 
 ```go
 type User struct {
-	Name string `json:"name"` // Name
-	Age  uint32 `json:"age"`  // Age
+    Name string `json:"name"` // Name
+    Age  int    `json:"age"`  // Age
 }
 
 func (u *User) print() {
-	buf, _ := json.MarshalIndent(u, "", "  ")
-	fmt.Printf("%s\n", buf)
-	u.Age = 99
+    buf, _ := json.MarshalIndent(u, "", "  ")
+    fmt.Printf("%s\n", buf)
+    u.Age = 99
 }
 ```
 ```go
-func main() {
-	user := &User{}
-	user.Name = "Matsuwin"
-	user.Age = 24
-	user.print()
-	fmt.Println(u.Age)
+// 结构体实例
+user := &User{}
+user.Name = "matsuwin"
+user.Age = 24
+user.print()
+
+// 结构体遍历
+x := reflect.TypeOf(user).Elem()
+v := reflect.ValueOf(user).Elem()
+for i := 0; i < x.NumField(); i++ {
+    fx := x.Field(i)
+    fv := v.Field(i)
+    switch fv.Kind() {
+    case reflect.String:
+        fmt.Printf("%s=%v\n", fx.Name, fv.String())
+    case reflect.Int:
+        fmt.Printf("%s=%v\n", fx.Name, fv.Int())
+    }
 }
 ```
 

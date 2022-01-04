@@ -3,31 +3,44 @@
 
 <br>
 
-流程控制 ：*Process control*
+```go
+// IF else
+if (true) {} else if (true) {} else {} // C
+if  true  {} else if  true  {} else {} // Go
 
-- [IF and matching](process/IF-matching.md)
-- [Loop](process/Loop.md)
-- [Error handling](process/Error-Handling.md)
-- [Function](process/Function.md)
+// Switch
+switch (1) { case 1: break; default: } // C
+switch  1  { case 1:        default: } // Go
 
-系统调用 ：*System call*
+// For loop
+for (int i = 0; i < 10; i++) {} // C
+for     i := 0; i < 10; i++  {} // Go
+```
 
-- [Standard I/O](syscall/standard-io.md)
-- [File I/O](syscall/File-IO.md)
-- [System time](syscall/System-time.md)
-- [System signal](syscall/System-signal.md)
-- [Exec](syscall/Exec.md)
+*Function*
 
-数据结构 ：*Data structure*
+- *[C](Function/function-c.md)
+, [Go](Function/function-go.md)
+, [Rust](Function/function-rust.md)*
 
-- [Builtin type](structure/Builtin-type.md)
-- [String](structure/String.md)
-- [Slice](structure/Slice.md)
-- [HashMap](structure/HashMap.md)
-- [Channel](structure/Channel.md)
-- [Struct](structure/Struct.md)
+*System call*
 
-并行编程 ：*Parallel programming*
+- *[Standard I/O](syscall/standard-io.md)*
+- *[File I/O](syscall/File-IO.md)*
+- *[System time](syscall/System-time.md)*
+- *[System signal](syscall/System-signal.md)*
+- *[Exec](syscall/Exec.md)*
 
-- [Parallel control](parallel/Parallel-control.md)
-- [Rate limit](parallel/Rate-limit.md)
+*Data structure*
+
+- *[Builtin type](structure/Builtin-type.md)*
+- *[String](structure/String.md)*
+- *[Slice](structure/Slice.md)*
+- *[HashMap](structure/HashMap.md)*
+- *[Channel](structure/Channel.md)*
+- *[Struct](structure/Struct.md)*
+
+*Parallel programming* (并行编程)
+
+- *[Parallel control](parallel/Parallel-control.md)*
+- *[Rate limit](parallel/Rate-limit.md)*
