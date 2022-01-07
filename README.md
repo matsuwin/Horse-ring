@@ -40,7 +40,10 @@ for     i := 0; i < 10; i++  {} // Go
 - *[Channel](structure/Channel.md)*
 - *[Struct](structure/Struct.md)*
 
-*Parallel programming* (并行编程)
+*Parallel programming*
 
 - *[Parallel control](parallel/Parallel-control.md)*
+- *[Signal group](parallel/signalgroup.md)*
+- *[Single flight](parallel/singleflight.md) (读优化)*
+- *[Buffer regulator](parallel/bufregulator.md) (写优化)*
 - *[Rate limit](parallel/Rate-limit.md)*
