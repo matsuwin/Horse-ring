@@ -2,7 +2,7 @@
 
 <br>
 
-*https://go.dev*
+***Go***
 
 ```go
 var unixMillis = time.Now().UnixMilli()
@@ -11,7 +11,25 @@ var timeString = time.UnixMilli(unixMillis).Local().Format(time.RFC3339Nano)
 
 <br>
 
-*https://dart.dev*
+***Kotlin***
+
+```kt
+val unixMillis = System.currentTimeMillis()
+val timeString = SimpleDateFormat("yyyy-MM-dd'T'h:m:ss.SSSZ").format(Date(unixMillis))
+```
+
+<br>
+
+***Python***
+
+```py
+unixMillis = int(datetime.timestamp(datetime.now()) * 1000)
+timeString = datetime.fromtimestamp(unixMillis / 1000)
+```
+
+<br>
+
+***Dart***
 
 ```dart
 var unixMillis = DateTime.now().millisecondsSinceEpoch;
@@ -20,7 +38,7 @@ var timeString = DateTime.fromMillisecondsSinceEpoch(unixMillis);
 
 <br>
 
-*https://rustup.rs*
+***Rust***
 
 ```rs
 use chrono::{Local, TimeZone};

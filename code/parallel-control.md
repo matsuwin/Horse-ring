@@ -8,15 +8,18 @@
 **线程** | Thread | *CPU 执行程序的最小单元，线程使用分时调度模式。*
 **分时调度** | Time-sharing | *让所有的线程轮流获得 CPU 的使用权，平均分配每个线程占用的 CPU 的时间片。*
 **线程安全** | Thread safe | *多个线程访问同一个对象时，可以获得正确的行为结果*
-**协程** | Coroutine | *由程序自身实现的多任务调度模型，协程建立在线程之上。*
+**协程** | Coroutine | *单线程协程，通过挂起和恢复操作进行通信。*
+**Go** | Goroutine | *多线程协程，由程序自身实现的多任务并行调度模型，通过 channel 进行通信。*
 
 <br>
 
-*https://go.dev*
+***Go***
 
 ```go
 func worker(wg *sync.WaitGroup, i int) {
 	defer wg.Done()
+
+    time.Sleep(time.Millisecond * 500)
 	fmt.Println(i)
 
     // 线程不安全的计算
@@ -26,41 +29,67 @@ func worker(wg *sync.WaitGroup, i int) {
     // atomic.AddInt32(&index, 1)
 
     // 使用 sync.Mutex 临界区锁开辟一个线程安全的代码空间
-    // mx.Lock()
+    // mutex.Lock()
     // index++
-    // mx.Unlock()
+    // mutex.Unlock()
 }
 ```
 ```go
 // new controller
 var wg = &sync.WaitGroup{}
 
-// add worker
+// add workers
 for i := 0; i < 10; i++ {
 	wg.Add(1)
 	go worker(wg, i)
 }
 
-// 等待所有 worker 工作结束
+// wait workers to end
 wg.Wait()
 ```
 
 <br>
 
-*https://rustup.rs*
+***Kotlin***
 
-```rs
-// Demo code
+```kt
+import kotlinx.coroutines.*
+import kotlinx.coroutines.sync.*
+```
+```kt
+suspend fun worker(i: Int) {
+    delay(500)
+    println(i)
 
-use futures::executor::block_on;
+    // 线程不安全的计算
+    // index++
 
-async fn hello_world() {
-    println!("hello, world!");
+    // 使用 sync.Mutex 临界区锁开辟一个线程安全的代码空间
+    // mutex.withLock {
+    //     index++
+    // }
+}
+```
+```kt
+suspend fun program() = coroutineScope {
+
+    // add workers
+    for (i in 0..9) {
+        launch { worker(i) }
+    }
 }
 
-fn main() {
-    let future = hello_world(); // Nothing is printed
-    println!("----------------------");
-    block_on(future); // `future` is run and "hello, world!" is printed
+suspend fun main() = coroutineScope {
+
+    // wait workers to end
+    launch { program() }.join()
 }
+```
+
+<br>
+
+***Python***
+
+```go
+
 ```

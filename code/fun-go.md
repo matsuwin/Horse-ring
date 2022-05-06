@@ -21,15 +21,14 @@ func f4(a interface{}) { fmt.Printf("f4 %T\n", a) }
 
 // 多返回值
 func f5() (n1, n2 int) {
-    fmt.Println("f5")
     return 2, 3
 }
 
 func main() {
 
-    // 延时函数
+    // 延迟函数
     defer func() {
-        fmt.Println("延时函数")
+        fmt.Println("延迟函数")
     }()
 
     // 自执行函数
@@ -42,6 +41,15 @@ func main() {
     f3(1, 2, 3, 4)
     f4("")
     n1, n2 := f5()
-    fmt.Println(n1, n2)
+    fmt.Printf("f5 %d %d\n", n1, n2)
 }
+```
+```
+自执行函数
+f1
+f2
+f3 [1 2 3 4]
+f4 string
+f5 2 3
+延迟函数
 ```
